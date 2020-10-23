@@ -1,0 +1,20 @@
+{% extends "application/application.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='css/application/my_playlist.css')}}"
+                  rel="stylesheet" type="text/css">
+    <title>My playlist</title>
+{% endblock %}
+{% block content %}
+    <div id="logo"><img src="{{ url_for('static', filename='images/logo.png')}}"></div>
+    <div id="videoListContainer">
+    </div>
+{% endblock %}
+{% block importjs %}
+    <script type ="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script>
+        const playlistSongs = {{ playlist_songs|tojson|safe }}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/application/my_playlist.js')}}"></script>
+{% endblock %}
+
+

@@ -1,0 +1,68 @@
+body, html{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background: url("../../images/background-image2.jpg") no-repeat center center;
+    background-size: 100% 100%;
+    font-family: Roboto, "Times New Roman", serif;
+}
+#content{
+    color: #f9f9f9;
+    height:100vh;
+    width:100vw;
+}
+#main-center{
+    position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+}
+#title{
+    text-align: center;
+    font-weight: 500;
+    min-width: 320px;
+    font-size:3vw;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px #ffd071;
+}
+#text{
+    text-align: center;
+    font-weight: 400;
+    min-width: 320px;
+    font-size:1.2vw;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px black;
+}
+.visitor-btn{
+    background-color: #ffd071;
+    border: 1px solid #ffd071;
+}
+.register-btn{
+    background-color: #ffaf0b;
+    border: 1px solid #ffaf0b;
+    margin-left: 4%;
+}
+.login-btn{
+    border: 1px solid #ffbf3e;
+    background-color: #ffbf3e;
+    margin-left: 4%;
+}
+
+#buttons{
+    margin: 0 auto 0;
+    width: 400px;
+}
+
+#buttons a{
+    font-weight: bold;
+    box-shadow: inset 0 0 0 0 #cccccc;
+    color: #000;
+    transition: ease-out 0.8s;
+    padding: 4px 6px;
+    font-size: 15px;
+    width: 30%;
+}
+
+.register-btn:hover, .login-btn:hover, .visitor-btn:hover{
+    box-shadow: inset 400px 0 0 0 #e0e0e0;
+    border: 1px solid #fff;
+}

@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #ffd071;
+}
+
+.table {
+    background: #4df95c;
+}
+
+th {
+    background: green;
+    color: white;
+}
+
+.container-playlist{
+    width: 80%;
+    margin: 30px 10%;
+}
+
+.fa-trash{
+    color: red;
+    cursor: pointer;
+}
+
+.add-song{
+    width: 10%;
+    min-width: 120px;
+    height: 30px;
+    margin-left: 45%;
+    margin-right: 45%;
+    border:1px solid green;
+    border-radius: 12px;
+    background-color: green;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.upload-song-input{
+    display: none;
+}
+.submit-button{
+    display: none;
+}

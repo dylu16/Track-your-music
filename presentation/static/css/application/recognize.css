@@ -1,0 +1,57 @@
+.container-circles{
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 50%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-by-audio, .search-by-microphone {
+    position: relative;
+    width: 30%;
+    height: 80%;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    background-color: #ffb724;
+    margin: 0;
+}
+.search-by-audio i, .search-by-microphone i{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateY(-30%);
+    transform: translateX(-50%);
+    width: 20%;
+    height: 20%;
+    color: #ffffff;
+    cursor:pointer;
+}
+
+#submit-button, #seconds{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 30%;
+    height: 10%;
+    transform: translateY(-55%);
+    transform: translateX(-50%);
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.search-by-audio i:hover {
+    color: #D3D3D3;
+}
+.search-by-microphone i:hover {
+    color: #D3D3D3;
+}
+
+#upload{
+    display: none;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "main.html" %}
+    <link href="{{ url_for('static', filename='css/authentication/authentication.css')}}"
+          rel="stylesheet" type="text/css">
+    <title>Register</title>
+</head>
+<body>
+    <div id="toastr-message">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {%  if messages %}
+                        <div class="alert alert-{{ messages[0][0] }}">
+                            {{ messages[0][1] }}
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                             </button>
+                        </div>
+                {% endif %}
+            {% endwith %}
+    </div>
+    <div class="authentication-main">
+        <div class="auth-main-center register-main-center">
+            <form method="POST" action="" autocomplete="off">
+                {{ form.hidden_tag() }}
+
+                <div class="form-title">
+                    Register
+                </div>
+                <div class="form-group">
+                    <div class="label-text">
+                        {{  form.lastname.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+                        <i class="fa fa-info-circle" data-toggle="tooltip" title="The first and last name must be between 3 and 20 characters long and contain only letters"></i>
+                    </div>
+                        <div class="input-group">
+                            {{ form.lastname(class="form-control")}}
+                        </div>
+                        <div class="input-requirements" id="invalid-lastname">
+
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-text">
+                        {{  form.firstname.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+                    </div>
+
+                        <div class="input-group">
+                            {{ form.firstname(class="form-control")}}
+                        </div>
+                        <div class="input-requirements" id="invalid-firstname">
+
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-text">
+                        {{  form.email.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+                        <i class="fa fa-info-circle" data-toggle="tooltip" title="The email must be in the form 'email@domain.com'"></i>
+                    </div>
+
+                        <div class="input-group">
+                            {{ form.email(class="form-control")}}
+                        </div>
+                        <div class="input-requirements" id="invalid-email">
+
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-text">
+                        {{  form.password.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+                        <i class="fa fa-info-circle" data-toggle="tooltip" title="The password must be between 6 and 30 characters long and contain at least one uppercase letter, one lowercase letter and one digit."></i>
+                    </div>
+
+                        <div class="input-group">
+                            {{ form.password(class="form-control")}}
+                        </div>
+                        <div class="input-requirements" id="invalid-password">
+
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-text">
+                        {{  form.confirm_password.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+                    </div>
+
+                        <div class="input-group">
+                            {{ form.confirm_password(class="form-control")}}
+                        </div>
+                        <div class="input-requirements" id="invalid-confirm-password">
+
+                        </div>
+                </div>
+                <div class="agileits-bottom">
+                        {{  form.submit()}}
+                </div>
+
+                <div class="auth-main-center-bottom">
+                    <span>
+                        <a class="links" href="/./../login"> I already have an account! </a>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/authentication/register.js')}}"></script>
+</body>
+</html>

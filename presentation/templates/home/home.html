@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "main.html" %}
+    <link href="{{ url_for('static', filename='css/home/home.css')}}"
+          rel="stylesheet" type="text/css">
+    <title>HomePage</title>
+</head>
+<body>
+    <div id="content">
+        <div id="main-center">
+            <div id="title">Track your music</div>
+            <div id="text">Aplicație de recunoaștere a muzicii
+            </div>
+            <div id="buttons">
+                <a href="/app" class="btn btn-default btn-responsive visitor-btn">
+                    Guest
+                </a>
+                <a href="/register" class="btn btn-default btn-responsive register-btn">
+                    Register
+                </a>
+                <a href="/login" class="btn btn-default btn-responsive login-btn">
+                    Login
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/home/home.js')}}"></script>
+</body>

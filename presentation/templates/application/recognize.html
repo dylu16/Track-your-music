@@ -1,0 +1,32 @@
+{% extends "application/application.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='css/application/recognize.css')}}"
+                  rel="stylesheet" type="text/css">
+    <title>Recognize</title>
+{% endblock %}
+{% block content %}
+    <div class="container-circles">
+                <div class="container-circle search-by-microphone">
+                    <a id="record-button"><i class="fas fa-microphone"></i></a>
+                    <select name="seconds" id="seconds">
+                        <option value="10">10 sec</option>
+                        <option value="15">15 sec</option>
+                        <option value="20">20 sec</option>
+                    </select>
+                </div>
+
+                <div class="container-circle search-by-audio">
+                    <form method=post enctype=multipart/form-data autocomplete="off">
+                        <label for="upload">
+                            <input type=file name=file id=upload onchange="readSongURL(this);" style="display: none">
+                            <a id="upload-file"><i class="fas fa-file-audio"></i></a>
+                        </label>
+                        <input type=submit id="submit-button" value=Recognize>
+                    </form>
+                </div>
+        </div>
+{% endblock %}
+{% block importjs %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/application/recognize.js')}}"></script>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+{% endblock %}

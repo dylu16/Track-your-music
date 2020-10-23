@@ -1,0 +1,30 @@
+{% extends "application/application.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='css/application/edit_playlist.css')}}"
+                  rel="stylesheet" type="text/css">
+    <title>Edit playlist</title>
+{% endblock %}
+{% block content %}
+    <div class="container-playlist">
+        <form id="form-add-song" method="POST" enctype = "multipart/form-data" autocomplete="off">
+            {{ form.hidden_tag() }}
+            {{ form.upload_song(class="upload-song-input", onchange="readSongURL(this);") }}
+            {{ form.upload_song.label(class="add-song") }}
+            {{ form.submit_button(class="submit-button") }}
+        </form>
+        <table id="playlist-table" class="table table-striped nowrap">
+            <thead>
+               <tr>
+                    <th>Song name</th>
+                    <th>Total hashed</th>
+                    <th>Date created</th>
+                    <th>Date modified</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+{% endblock %}
+{% block importjs %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/application/edit_playlist.js')}}"></script>
+{% endblock %}

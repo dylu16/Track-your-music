@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "main.html" %}
+    <link href="{{ url_for('static', filename='css/authentication/authentication.css')}}"
+          rel="stylesheet" type="text/css">
+    <title>Login</title>
+</head>
+<body class="auth-body">
+    <div id="toastr-message">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {%  if messages %}
+                        <div class="alert alert-{{ messages[0][0] }}">
+                            {{ messages[0][1] }}
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                             </button>
+                        </div>
+                {% endif %}
+            {% endwith %}
+    </div>
+    <div class="authentication-main">
+            <div class="auth-main-center">
+                <form method="POST" action="" autocomplete="off">
+                    {{ form.hidden_tag() }}
+
+                    <div class="form-title">
+                        <h4>Login</h4>
+                    </div>
+
+                    <div class="form-group">
+                        {{  form.email.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+
+                            <div class="input-group">
+                                {{ form.email(class="form-control")}}
+                            </div>
+                            <div class="input-requirements" id="invalid-email">
+				            </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{  form.password.label(class="cols-sm-2 control-label")}}
+                        <span class="required-star">*</span>
+
+                            <div class="input-group">
+                                {{ form.password(class="form-control")}}
+                            </div>
+                            <div class="input-requirements" id="invalid-password">
+				            </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <a class="links" href="/./../forgot_password">Forgot password?</a>
+                    </div>
+
+                    <div class="agileits-bottom">
+                        {{  form.submit()}}
+                    </div>
+
+                    <div class="auth-main-center-bottom">
+                        <span>
+                            Don't have an account?<br>
+                            <a class="links" href="/./../register">Register</a>
+                        </span>
+                    </div>
+                </form>
+            </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/authentication/login.js')}}"></script>
+</body>
